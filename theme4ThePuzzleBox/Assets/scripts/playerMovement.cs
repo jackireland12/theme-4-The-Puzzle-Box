@@ -6,7 +6,7 @@ public class playerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     public float speed;
-    Vector2 vel;
+    
     public Camera cam;
     public float playerScale;
     public float camScale;
