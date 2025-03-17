@@ -7,35 +7,27 @@ public class batteryMovement : MonoBehaviour
     // Start is called before the first frame update
     private float horizontal;
     private float speed = 8f;
-    private float jumpingPower = 16f;
+    private float jumpingPower = 10f;
     private bool isFacingRight = true;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    public int batteryLevel;
 
-
-    //Rigidbody2D rb;
-    //public float speed;
-    //public float jumphight;
+    
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        batteryLevel = 5;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //float horrizontalInput = Input.GetAxis("Horizontal");
-        ////float VerticalInput = Input.GetAxis("Vertical");
-        //if (Input.GetButtonDown("Fire1"))
-        //{
-        //    Jump();
-        //}
-        //rb.velocity = new Vector2(horrizontalInput * speed, 0);
+        
         horizontal = Input.GetAxisRaw("Horizontal");
         if(Input.GetButtonDown("Jump")&& IsGrounded())
         {
@@ -72,10 +64,5 @@ public class batteryMovement : MonoBehaviour
         };
     }
 
-    //void Jump()
-    //{
-    //    Debug.Log("jump");
-    //    rb.AddForce(new Vector2 (rb.velocity.x , jumphight));
-        
-    //}
+    
 }

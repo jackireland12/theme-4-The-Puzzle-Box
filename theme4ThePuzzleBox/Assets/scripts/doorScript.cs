@@ -6,9 +6,13 @@ public class doorScript : MonoBehaviour
 {
     Animator animator;
     private bool coliding;
+    batteryMovement bm;
+
+    
     private void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        bm = GameObject.FindGameObjectWithTag("Player").GetComponent<batteryMovement>();
         animator.speed = 0.0f;
     }
     
